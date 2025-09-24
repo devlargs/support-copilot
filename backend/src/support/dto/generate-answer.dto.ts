@@ -1,11 +1,7 @@
 import { IsString, IsNotEmpty } from 'class-validator';
 
-export class CreateSupportDto {
+export class GenerateAnswerDto {
     @IsString()
     @IsNotEmpty()
     question: string;
-
-    @IsString()
-    @IsNotEmpty()
-    answer: string;
 }
