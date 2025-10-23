@@ -6,6 +6,9 @@ export type SupportDocument = Support & Document;
 @Schema({ timestamps: true })
 export class Support {
   @Prop({ required: true, type: String })
+  subject: string;
+
+  @Prop({ required: true, type: String })
   question: string;
 
   @Prop({ required: true, type: String })

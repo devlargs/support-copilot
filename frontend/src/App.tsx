@@ -1,13 +1,14 @@
 import SupportPage from "./pages/SupportPage";
 import { ThemeProvider } from "./contexts/ThemeContext";
-import ThemeToggle from "./components/ThemeToggle";
+import { QueryProvider } from "./providers/QueryProvider";
 
 function App() {
   return (
-    <ThemeProvider>
-      <SupportPage />
-      <ThemeToggle />
-    </ThemeProvider>
+    <QueryProvider>
+      <ThemeProvider>
+        <SupportPage />
+      </ThemeProvider>
+    </QueryProvider>
   );
 }
 
