@@ -1,10 +1,12 @@
-import SupportForm from "../components/SupportForm";
-import SupportTable from "../components/SupportTable";
-import ThemeToggle from "../components/ThemeToggle";
-import Modal from "../components/Modal";
-import { useSupportResponses } from "../hooks/useSupport";
-import { useSupportStore } from "../stores/supportStore";
-import { AlertCircleIcon, ChatBubbleIcon, PlusIcon } from "../components/icons";
+"use client";
+
+import SupportForm from "@/components/SupportForm";
+import SupportTable from "@/components/SupportTable";
+import ThemeToggle from "@/components/ThemeToggle";
+import Modal from "@/components/Modal";
+import { useSupportResponses } from "@/hooks/useSupport";
+import { useSupportStore } from "@/stores/supportStore";
+import { AlertCircleIcon, ChatBubbleIcon, PlusIcon } from "@/components/icons";
 
 export default function SupportPage() {
   const {

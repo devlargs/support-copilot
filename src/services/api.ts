@@ -10,7 +10,7 @@ import {
 
 // Create axios instance with base configuration
 const api = axios.create({
-    baseURL: "http://localhost:3000", // Adjust this to match your backend URL
+    baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:3000",
     timeout: 10000,
     headers: {
         "Content-Type": "application/json",
