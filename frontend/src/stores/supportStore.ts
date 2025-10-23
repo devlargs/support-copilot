@@ -8,6 +8,7 @@ interface SupportState {
     selectedResponse: SupportResponse | null;
     isCreating: boolean;
     isEditing: boolean;
+    isViewing: boolean;
     searchQuery: string;
     currentPage: number;
     pageSize: number;
@@ -20,12 +21,14 @@ interface SupportState {
     setSelectedResponse: (response: SupportResponse | null) => void;
     setIsCreating: (isCreating: boolean) => void;
     setIsEditing: (isEditing: boolean) => void;
+    setIsViewing: (isViewing: boolean) => void;
     setSearchQuery: (query: string) => void;
     setCurrentPage: (page: number) => void;
     setPageSize: (size: number) => void;
     setIsModalOpen: (isOpen: boolean) => void;
     openCreateModal: () => void;
     openEditModal: (response: SupportResponse) => void;
+    openViewModal: (response: SupportResponse) => void;
     closeModal: () => void;
     setDeleteConfirm: (id: string | null) => void;
     setSorting: (sorting: SortingState | ((old: SortingState) => SortingState)) => void;
@@ -43,6 +46,7 @@ export const useSupportStore = create<SupportState>()(
             selectedResponse: null,
             isCreating: false,
             isEditing: false,
+            isViewing: false,
             searchQuery: "",
             currentPage: 1,
             pageSize: 10,
@@ -58,6 +62,7 @@ export const useSupportStore = create<SupportState>()(
                 set({
                     isCreating,
                     isEditing: false,
+                    isViewing: false,
                     selectedResponse: null,
                 }),
 
@@ -65,6 +70,14 @@ export const useSupportStore = create<SupportState>()(
                 set({
                     isEditing,
                     isCreating: false,
+                    isViewing: false,
+                }),
+
+            setIsViewing: (isViewing) =>
+                set({
+                    isViewing,
+                    isCreating: false,
+                    isEditing: false,
                 }),
 
             setSearchQuery: (searchQuery) =>
@@ -88,6 +101,7 @@ export const useSupportStore = create<SupportState>()(
                     isModalOpen: true,
                     isCreating: true,
                     isEditing: false,
+                    isViewing: false,
                     selectedResponse: null,
                 }),
 
@@ -96,6 +110,16 @@ export const useSupportStore = create<SupportState>()(
                     isModalOpen: true,
                     isCreating: false,
                     isEditing: true,
+                    isViewing: false,
+                    selectedResponse: response,
+                }),
+
+            openViewModal: (response) =>
+                set({
+                    isModalOpen: true,
+                    isCreating: false,
+                    isEditing: false,
+                    isViewing: true,
                     selectedResponse: response,
                 }),
 
@@ -104,6 +128,7 @@ export const useSupportStore = create<SupportState>()(
                     isModalOpen: false,
                     isCreating: false,
                     isEditing: false,
+                    isViewing: false,
                     selectedResponse: null,
                 }),
 
@@ -135,6 +160,7 @@ export const useSupportStore = create<SupportState>()(
                     selectedResponse: null,
                     isCreating: false,
                     isEditing: false,
+                    isViewing: false,
                     isModalOpen: false,
                 }),
         }),

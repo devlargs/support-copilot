@@ -12,6 +12,8 @@ export default function SupportPage() {
     openCreateModal,
     closeModal,
     isEditing,
+    isViewing,
+    selectedResponse,
   } = useSupportStore();
 
   // Fetch support responses with current pagination and search params
@@ -121,13 +123,84 @@ export default function SupportPage() {
         <SupportTable data={supportData?.data || []} isLoading={isLoading} />
       </main>
 
-      {/* Modal for Form */}
+      {/* Modal for Form/View */}
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
-        title={isEditing ? "Edit Support Response" : "Create Support Response"}
+        title={
+          isViewing
+            ? "View Support Response"
+            : isEditing
+            ? "Edit Support Response"
+            : "Create Support Response"
+        }
       >
-        <SupportForm onSuccess={closeModal} />
+        {isViewing && selectedResponse ? (
+          <div className="p-6 space-y-6">
+            {/* Subject */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Subject
+              </label>
+              <div className="text-lg font-semibold text-gray-900 dark:text-white">
+                {selectedResponse.subject}
+              </div>
+            </div>
+
+            {/* Question */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Question
+              </label>
+              <div
+                className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-700"
+                dangerouslySetInnerHTML={{ __html: selectedResponse.question }}
+              />
+            </div>
+
+            {/* Answer */}
+            <div>
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                Answer
+              </label>
+              <div
+                className="prose dark:prose-invert max-w-none text-gray-700 dark:text-gray-300 p-4 bg-gray-50 dark:bg-gray-900/50 rounded-lg border border-gray-200 dark:border-gray-700"
+                dangerouslySetInnerHTML={{ __html: selectedResponse.answer }}
+              />
+            </div>
+
+            {/* Timestamps */}
+            <div className="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700 text-sm text-gray-500 dark:text-gray-400">
+              <div>
+                Created:{" "}
+                {new Date(selectedResponse.createdAt).toLocaleString("en-US", {
+                  month: "short",
+                  day: "numeric",
+                  year: "numeric",
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </div>
+              {selectedResponse.updatedAt && (
+                <div>
+                  Updated:{" "}
+                  {new Date(selectedResponse.updatedAt).toLocaleString(
+                    "en-US",
+                    {
+                      month: "short",
+                      day: "numeric",
+                      year: "numeric",
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    }
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
+          <SupportForm onSuccess={closeModal} />
+        )}
       </Modal>
     </div>
   );
