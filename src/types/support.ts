@@ -41,7 +41,16 @@ export interface AnalyzeQuestionRequest {
     query: string;
 }
 
+export interface SimilarityMatch {
+    response: SupportResponse;
+    similarity: number;
+    similarityPercentage: string;
+}
+
 export interface AnalyzeQuestionResponse {
-    // Define the response structure based on what the backend returns
-    [key: string]: any;
+    query: string;
+    matches: SimilarityMatch[];
+    hasGoodMatch: boolean;
+    bestMatch: SimilarityMatch | null;
+    message: string;
 }

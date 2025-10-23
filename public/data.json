@@ -2,8 +2,11 @@
   "responses": [
     {
       "id": "8cdb482d-31b4-4f26-9f9a-27f4b4f4e5b1",
+      "subject": "Unable to add 10th user",
       "question": "Hello, we need to add a 10th user but we are unable to due to the Tinsel Support user. What can we do?",
-      "answer": "Apologies for that we have removed the Tinsel support user on your account.  You can add a user now."
+      "answer": "Apologies for that we have removed the Tinsel support user on your account.  You can add a user now.",
+      "createdAt": "2025-10-20T10:00:00.000Z",
+      "updatedAt": "2025-10-20T10:00:00.000Z"
     }
   ]
 }

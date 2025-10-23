@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import TiptapEditor from "./TiptapEditor";
 import {
   useCreateSupportResponse,
   useUpdateSupportResponse,
@@ -141,11 +140,11 @@ export default function SupportForm({ onSuccess }: SupportFormProps) {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Question <span className="text-red-500">*</span>
           </label>
-          <TiptapEditor
+          <textarea
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
             placeholder="Enter the customer question or inquiry..."
-            content={question}
-            onChange={setQuestion}
-            className="min-h-[120px]"
+            className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200 min-h-[120px] resize-y"
           />
           {errors.question && (
             <p className="mt-2 text-sm text-red-600 dark:text-red-400 flex items-center">
@@ -180,11 +179,11 @@ export default function SupportForm({ onSuccess }: SupportFormProps) {
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Answer <span className="text-red-500">*</span>
           </label>
-          <TiptapEditor
+          <textarea
+            value={answer}
+            onChange={(e) => setAnswer(e.target.value)}
             placeholder="The AI-generated response will appear here, or you can write your own..."
-            content={answer}
-            onChange={setAnswer}
-            className="min-h-[200px]"
+            className="w-full px-4 py-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-600 focus:border-transparent text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-all duration-200 min-h-[200px] resize-y"
           />
           {errors.answer && (
             <p className="mt-2 text-sm text-red-600 dark:text-red-400 flex items-center">
