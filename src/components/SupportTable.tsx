@@ -70,19 +70,10 @@ export default function SupportTable({ data, isLoading }: SupportTableProps) {
       {
         accessorKey: "question",
         header: "Question",
+        size: 400,
         cell: (info) => (
           <div
-            className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2"
-            dangerouslySetInnerHTML={{ __html: info.getValue() as string }}
-          />
-        ),
-      },
-      {
-        accessorKey: "answer",
-        header: "Answer",
-        cell: (info) => (
-          <div
-            className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2"
+            className="text-sm text-gray-600 dark:text-gray-400 line-clamp-2 max-w-md"
             dangerouslySetInnerHTML={{ __html: info.getValue() as string }}
           />
         ),
@@ -267,7 +258,9 @@ export default function SupportTable({ data, isLoading }: SupportTableProps) {
                   {row.getVisibleCells().map((cell) => (
                     <td
                       key={cell.id}
-                      className="px-6 py-4 whitespace-nowrap"
+                      className={`px-6 py-4 ${
+                        cell.column.id === "question" ? "" : "whitespace-nowrap"
+                      }`}
                       onClick={(e) => {
                         // Prevent row click when clicking on actions column
                         if (cell.column.id === "actions") {

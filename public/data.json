@@ -1,6 +1,94 @@
 {
   "responses": [
     {
+      "id": "05ec9e57-0c81-42ab-93d0-3ffeda3362ae",
+      "subject": "From Email",
+      "question": "Is there a way to customize the from email address for proposals, invoices, etc.? We are wanting the emails to come from our email address if possible.",
+      "answer": "Hi Cole, \n\nWe don't have a feature to change the \"from\" email address, all emails are sent from our default address (no-reply@tinselcrm.com). However, you can update the “Reply-To” and \"Display name\" field if you’d like recipients to respond directly to your email instead and also to update the sender recipient name.\n\nTo do this, go to Settings → Email → Sending Section.\n\nRegards,\nRalph, Tinsel CRM Support Team",
+      "createdAt": "2025-10-23T21:01:57.798Z",
+      "updatedAt": "2025-10-23T21:01:57.798Z"
+    },
+    {
+      "id": "7933e2e1-0134-444a-a3ed-c8f97e6e4488",
+      "subject": "Credit card.Payment via square",
+      "question": "Our customers keep getting a card error information when trying to pay with their credit card via invoice. I tried re-entering the square information on the settings page and it did not work.I need help asap",
+      "answer": "Hi Elizabeth,\n\nWe have fixed the square payment issue.\n\nYou may try it on your end.\n\nIf possible, kindly issue refund from your square portal for those invoices test payments as we do not have access for refunds.\n\nThank you.\n\nRegards,\n\nAryhan Coyco\nTinsel CRM Support Specialist",
+      "createdAt": "2025-10-23T21:00:13.684Z",
+      "updatedAt": "2025-10-23T21:00:13.684Z"
+    },
+    {
+      "id": "a05c2383-b06a-4e3b-8514-10cd3ad1bd97",
+      "subject": "How and where do I set up my hourly rates",
+      "question": "My estimate is only showing cost for materials even though I've entered hours. Thx",
+      "answer": "HI Adam,\n\nGood day!\n\nWe estimate feature items by quantity and not by hour. What other organizations do is that they create an inventory called \"installation\" and that is what they add into proposals.\n\nThank you,\n\nGaston Velarde\nTinsel CRM Support Specialist",
+      "createdAt": "2025-10-23T20:47:15.851Z",
+      "updatedAt": "2025-10-23T20:47:15.851Z"
+    },
+    {
+      "id": "328ea434-32a6-4149-8eb7-c5ac1b1f76d0",
+      "subject": "Returned Check",
+      "question": "Hi. How do you recommend handling a returned check? I did look in the KB and couldnt find an article.  \n\nI don't see a way to delete the payment so that the invoice becomes active again.  Please advise how to manage this and in a way that keeps my numbers on my dashboard accurate. I need to reduce my payments by $1050 and put the balance back on the customer. \n\nThanks, \nKristy",
+      "answer": "Hi Kristy,\n\nGood day!\n\nYou can update the payment to \"Rejected\" status. It will void the payment in that invoice.\n\nThank you,\n\nGaston Velarde\nTinsel CRM Support Specialist",
+      "createdAt": "2025-10-23T20:45:41.758Z",
+      "updatedAt": "2025-10-23T20:45:41.758Z"
+    },
+    {
+      "id": "7adc3466-70a6-42f5-b73c-1fa7708250e9",
+      "subject": "Payment Issue",
+      "question": "Non of my customers are able to pay. I am getting numerous emails and texts.  Denise Bustamante is another customer that just email me 15 minutes ago telling me she can’t make payment. Sure you can make an invoice. They are trying to use credit or debit cards to pay.",
+      "answer": "Hi Mohsen,\n\nSquare payment gateway has been fixed.\nLet us know if you still encountered any other error.\n\nRegards,\n\nAryhan Coyco\nTinsel CRM Support Specialist",
+      "createdAt": "2025-10-23T20:44:48.334Z",
+      "updatedAt": "2025-10-23T20:44:48.334Z"
+    },
+    {
+      "id": "95c0b3bf-1670-40a5-8c9e-3171878f2766",
+      "subject": "multi year agreement",
+      "question": "Hello, I dont see a way to enable in settings. Nothing happens when I click on either box. The only enabled button is the save, but there is nothing to save lol\nBest\nChristine",
+      "answer": "Hi Christine,\n\nGood day!\n\nFor this we only support one pricing for every single/multi-year proposal, what we can suggest is that for the first year you can create a separate project and also a separate project for year 2&3.\n\nThank you,\n\nGaston Velarde\nTinsel CRM Support Specialist",
+      "createdAt": "2025-10-23T20:41:30.438Z",
+      "updatedAt": "2025-10-23T20:41:30.438Z"
+    },
+    {
+      "id": "b7bac8f6-8aa6-4766-a36c-7a69174749f2",
+      "subject": "Cancel Account",
+      "question": "I do not want to use Tinsel CRM and I was charged. I want to cancel today. Please close account and refund the money",
+      "answer": "Hi Chad, \n\nGood day!\n\nWe have already processed your refund.\n\nTo cancel your subscription, please go to Settings > Subscription, click on your active subscription to open the pop-up window, and from there you can cancel it.\n\nBefore you finalize your cancellation, we’d love to offer you a free demo so we can walk you through the system and help you get the most out of it. Many clients find that a quick walkthrough really helps them understand how the platform can work better for their business.\n\nIf you’re open to it, you can easily book a time that works best for you using this link:\nTinsel CRM Demo Booking (60min):\nhttps://api.leadconnectorhq.com/widget/bookings/tinseldemo60\n\nHere's the details of refund:\n\nTransaction ID: 11283464563\n\nAuth Code: 023762\n\nThanks and Regards,\nNemuel, Tinsel CRM Support Specialist",
+      "createdAt": "2025-10-23T20:39:38.832Z",
+      "updatedAt": "2025-10-23T20:39:38.832Z"
+    },
+    {
+      "id": "5600c5a6-d6dc-4e86-877c-05b28c34442b",
+      "subject": "Payment issues",
+      "question": "Morning! \n\nI am getting a “do not honor” code when trying to process payment for client Anthony Sullivan. Is this the card declined message? Just want to confirm before I reach out and it is not his card, it is our system not working again.\n\nThank you much for looking into it/ letting me know!\n\nAll the best,\n\nRich",
+      "answer": "Hi Rich,\n\nUsually the \"Do Not Honor\" code is an error thrown by the provider when the type of Card used is not in their system.\n\nCan you provide the card type?\n\nMay we also know which provider does your client used? TinselPay or Square?",
+      "createdAt": "2025-10-23T20:37:09.088Z",
+      "updatedAt": "2025-10-23T20:37:09.088Z"
+    },
+    {
+      "id": "287bf914-476f-44e2-9595-d77a2b8e1533",
+      "subject": "Sales Tax Report",
+      "question": "Zach, I’m trying to pull a report from Tinsel for Q3 sales tax.  In the past I’m sure that there was a Tax report listed in reports.  I don’t see it now. \n\nCan you tell me how to find that information?",
+      "answer": "There is a tax report, however it was throwing some funky numbers so we pulled it down to get it fixed. I will have the support team update you as soon as its back up. \n\n@ Aryhan, Please let Chuck know when this report is live again. ",
+      "createdAt": "2025-10-23T20:35:04.589Z",
+      "updatedAt": "2025-10-23T20:35:04.589Z"
+    },
+    {
+      "id": "b5967f2a-78e8-4afe-bfc5-a75680b25417",
+      "subject": "DWL Franchise Portal",
+      "question": "Wanted to check in on a couple of things:\n \nCan Shannen and I have a quick walkthrough of the portal.  I have a few questions around the implementation/design so would like to hear how it was designed to work first 😊\nShane has asked me for a copy of the API Spec or any documentation you have or can share.  If you could send to both of us that would be much appreciated.",
+      "answer": "Yes, we can definitely schedule a quick walkthrough of the portal for you and Shannen. Please let us know your preferred time so we can set it up, preferably tomorrow onwards.\n\nRegarding the API documentation, I’ll get them ready and share them with you.",
+      "createdAt": "2025-10-23T20:32:17.877Z",
+      "updatedAt": "2025-10-23T20:32:17.877Z"
+    },
+    {
+      "id": "d154a280-6ed4-4baa-bee7-ae2efbdd6dd1",
+      "subject": "TinselPay additional requirments",
+      "question": "Good day!\n\nAs per our payment provider, if you intend to apply for a Credit Card processing account as well, they will need the following information to proceed:\n\nAverage Ticket Amount:\n\nMaximum Ticket Amount (If you take a 50% deposit, please provide half of the largest expected job value):\n\nTotal Monthly Credit Card Volume:",
+      "answer": "Our payment provider is also asking whether you would like to pass the fees on to your customers or not. May we confirm your preference?",
+      "createdAt": "2025-10-23T20:30:17.567Z",
+      "updatedAt": "2025-10-23T20:30:17.567Z"
+    },
+    {
       "id": "8cdb482d-31b4-4f26-9f9a-27f4b4f4e5b1",
       "subject": "Unable to add 10th user",
       "question": "Hello, we need to add a 10th user but we are unable to due to the Tinsel Support user. What can we do?",

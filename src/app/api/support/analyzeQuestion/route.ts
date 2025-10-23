@@ -16,7 +16,8 @@ async function loadModel() {
     if (modelCache) return modelCache
 
     // Dynamically import TensorFlow to avoid issues with server-side rendering
-    const tf = await import('@tensorflow/tfjs-node')
+    // Using @tensorflow/tfjs instead of tfjs-node to avoid native binding issues on Windows
+    const tf = await import('@tensorflow/tfjs')
     const use = await import('@tensorflow-models/universal-sentence-encoder')
 
     modelCache = await use.load()

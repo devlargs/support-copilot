@@ -69,9 +69,11 @@ export const supportApi = {
         await api.delete(`/support/${id}`);
     },
 
-    // Analyze a question
+    // Analyze a question (with extended timeout for model loading on first request)
     analyzeQuestion: async (data: AnalyzeQuestionRequest): Promise<AnalyzeQuestionResponse> => {
-        const response = await api.post("/support/analyzeQuestion", data);
+        const response = await api.post("/support/analyzeQuestion", data, {
+            timeout: 30000, // 30 seconds to allow for initial model loading
+        });
         return response.data;
     },
 
