@@ -36,3 +36,12 @@ export interface GenerateAnswerRequest {
 export interface GenerateAnswerResponse {
     answer: string;
 }
+
+export interface AnalyzeQuestionRequest {
+    query: string;
+}
+
+export interface AnalyzeQuestionResponse {
+    // Define the response structure based on what the backend returns
+    [key: string]: any;
+}

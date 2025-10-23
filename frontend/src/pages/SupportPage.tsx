@@ -70,7 +70,6 @@ export default function SupportPage() {
             </div>
 
             <div className="flex items-center space-x-4">
-              <ThemeToggle />
               <button
                 onClick={openCreateModal}
                 className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-medium px-6 py-2.5 rounded-lg transition-all duration-200 flex items-center space-x-2 shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
@@ -78,6 +77,7 @@ export default function SupportPage() {
                 <PlusIcon />
                 <span>New Response</span>
               </button>
+              <ThemeToggle />
             </div>
           </div>
         </div>

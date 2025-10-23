@@ -3,7 +3,6 @@ import TiptapEditor from "./TiptapEditor";
 import {
   useCreateSupportResponse,
   useUpdateSupportResponse,
-  useGenerateAnswer,
 } from "../hooks/useSupport";
 import { useSupportStore } from "../stores/supportStore";
 import {
@@ -12,6 +11,7 @@ import {
   LightningIcon,
   CheckIcon,
 } from "./icons";
+import { supportApi } from "../services/api";
 
 interface SupportFormProps {
   onSuccess?: () => void;
@@ -21,16 +21,15 @@ export default function SupportForm({ onSuccess }: SupportFormProps) {
   const { selectedResponse, isEditing, closeModal } = useSupportStore();
   const createMutation = useCreateSupportResponse();
   const updateMutation = useUpdateSupportResponse();
-  const generateMutation = useGenerateAnswer();
 
   // Local state for form fields
   const [subject, setSubject] = useState("");
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [isAnalyzing, setIsAnalyzing] = useState(false);
 
   const isLoading = createMutation.isPending || updateMutation.isPending;
-  const isGenerating = generateMutation.isPending;
 
   // Populate form when modal opens with selectedResponse
   useEffect(() => {
@@ -101,14 +100,16 @@ export default function SupportForm({ onSuccess }: SupportFormProps) {
       return;
     }
 
+    setIsAnalyzing(true);
     try {
-      const result = await generateMutation.mutateAsync({
-        question,
+      const result = await supportApi.analyzeQuestion({
+        query: question,
       });
-      setAnswer(result.answer);
-      setErrors({ ...errors, answer: "" });
+      console.log("Analyze Question Response:", result);
     } catch (error) {
-      console.error("Failed to generate answer:", error);
+      console.error("Failed to analyze question:", error);
+    } finally {
+      setIsAnalyzing(false);
     }
   };
 
@@ -157,18 +158,18 @@ export default function SupportForm({ onSuccess }: SupportFormProps) {
           <button
             type="button"
             onClick={handleGenerateResponse}
-            disabled={isGenerating || !question.trim()}
+            disabled={isAnalyzing || !question.trim()}
             className="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 disabled:from-gray-400 disabled:to-gray-500 disabled:cursor-not-allowed text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center shadow-lg hover:shadow-xl transform hover:scale-105 active:scale-95"
           >
-            {isGenerating ? (
+            {isAnalyzing ? (
               <>
                 <SpinnerIcon className="animate-spin w-5 h-5 mr-2" />
-                Generating AI Response...
+                Analyzing Question...
               </>
             ) : (
               <>
                 <LightningIcon className="w-5 h-5 mr-2" />
-                Generate AI Response
+                Analyze Question
               </>
             )}
           </button>

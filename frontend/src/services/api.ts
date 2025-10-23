@@ -4,8 +4,8 @@ import {
     CreateSupportRequest,
     PaginationParams,
     PaginatedResponse,
-    GenerateAnswerRequest,
-    GenerateAnswerResponse,
+    AnalyzeQuestionRequest,
+    AnalyzeQuestionResponse,
 } from "../types/support";
 
 // Create axios instance with base configuration
@@ -69,13 +69,12 @@ export const supportApi = {
         await api.delete(`/support/${id}`);
     },
 
-    // Generate AI-powered answer
-    generateAnswer: async (data: GenerateAnswerRequest): Promise<GenerateAnswerResponse> => {
-        const response = await api.get("/support/generateAnswers", {
-            params: { question: data.question },
-        });
+    // Analyze a question
+    analyzeQuestion: async (data: AnalyzeQuestionRequest): Promise<AnalyzeQuestionResponse> => {
+        const response = await api.post("/support/analyzeQuestion", data);
         return response.data;
     },
+
 };
 
 export default api;
